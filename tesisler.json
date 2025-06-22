@@ -1,0 +1,69 @@
+{
+  "tesisler": [
+    {
+      "id": "test4",
+      "isim": "test4",
+      "konum": "test address",
+      "toplamEnerji": "103.649 kW",
+      "gunlukEnerji": "103.649 kW",
+      "durum": "aktif",
+      "inv_SeriNo": "INV001",
+      "koordinatlar": {
+        "lat": 39.1,
+        "lng": 35.3
+      }
+    },
+    {
+      "id": "tesis_ankara",
+      "isim": "Ankara GES",
+      "konum": "Ankara, Türkiye",
+      "toplamEnerji": "250.350 kW",
+      "gunlukEnerji": "87.420 kW",
+      "durum": "aktif",
+      "inv_SeriNo": "INV002",
+      "koordinatlar": {
+        "lat": 39.9334,
+        "lng": 32.8597
+      }
+    },
+    {
+      "id": "tesis_istanbul",
+      "isim": "İstanbul Çatı GES",
+      "konum": "İstanbul, Türkiye",
+      "toplamEnerji": "180.750 kW",
+      "gunlukEnerji": "45.120 kW",
+      "durum": "deaktif",
+      "inv_SeriNo": "INV003",
+      "koordinatlar": {
+        "lat": 41.0082,
+        "lng": 28.9784
+      }
+    },
+    {
+      "id": "tesis_izmir",
+      "isim": "İzmir Solar Park",
+      "konum": "İzmir, Türkiye",
+      "toplamEnerji": "320.890 kW",
+      "gunlukEnerji": "125.630 kW",
+      "durum": "aktif",
+      "inv_SeriNo": "INV004",
+      "koordinatlar": {
+        "lat": 38.4192,
+        "lng": 27.1287
+      }
+    },
+    {
+      "id": "tesis_antalya",
+      "isim": "Antalya Güneş Santrali",
+      "konum": "Antalya, Türkiye",
+      "toplamEnerji": "450.200 kW",
+      "gunlukEnerji": "198.750 kW",
+      "durum": "aktif",
+      "inv_SeriNo": "INV005",
+      "koordinatlar": {
+        "lat": 36.8969,
+        "lng": 30.7133
+      }
+    }
+  ]
+}

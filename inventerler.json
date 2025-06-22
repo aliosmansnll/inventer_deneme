@@ -1,0 +1,29 @@
+{
+  "inverterler": [
+    {
+      "seriNo": "INV001",
+      "tesisId": "test4",
+      "durum": "aktif"
+    },
+    {
+      "seriNo": "INV002",
+      "tesisId": "tesis_ankara",
+      "durum": "aktif"
+    },
+    {
+      "seriNo": "INV003", 
+      "tesisId": "tesis_istanbul",
+      "durum": "deaktif"
+    },
+    {
+      "seriNo": "INV004",
+      "tesisId": "tesis_izmir", 
+      "durum": "aktif"
+    },
+    {
+      "seriNo": "INV005",
+      "tesisId": "tesis_antalya",
+      "durum": "aktif"
+    }
+  ]
+}

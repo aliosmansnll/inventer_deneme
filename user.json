@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@pixel.com",
+      "password": "Admin123",
+      "role": "admin",
+      "isActive": true,
+      "permissions": ["dashboard", "facilities", "inverters", "users", "settings"],
+      "assignedFacilities": "*",
+      "department": "Yönetim",
+      "accessLevel": "full"
+    },
+    {
+      "id": 2,
+      "name": "Test User",
+      "email": "test@pixel.com",
+      "password": "Test123",
+      "role": "user",
+      "isActive": true,
+      "permissions": ["dashboard", "facilities", "inverters"],
+      "assignedFacilities": ["test4", "tesis_ankara"],
+      "department": "Operasyon",
+      "accessLevel": "limited"
+    },
+    {
+      "id": 3,
+      "name": "Ahmet Yılmaz",
+      "email": "ahmet@pixel.com",
+      "password": "Ahmet123",
+      "role": "operator",
+      "isActive": true,
+      "permissions": ["dashboard", "facilities"],
+      "assignedFacilities": ["tesis_istanbul", "tesis_izmir"],
+      "department": "Saha Operasyonu",
+      "accessLevel": "limited"
+    },
+    {
+      "id": 4,
+      "name": "Fatma Demir",
+      "email": "fatma@pixel.com",
+      "password": "Fatma123",
+      "role": "analyst",
+      "isActive": true,
+      "permissions": ["dashboard", "facilities", "inverters", "reports"],
+      "assignedFacilities": ["tesis_antalya", "tesis_izmir", "test4"],
+      "department": "Analiz",
+      "accessLevel": "read-only"
+    },
+    {
+      "id": 5,
+      "name": "Mehmet Kaya",
+      "email": "mehmet@pixel.com",
+      "password": "Mehmet123",
+      "role": "user",
+      "isActive": false,
+      "permissions": ["dashboard"],
+      "assignedFacilities": [],
+      "department": "Bakım",
+      "accessLevel": "limited"
+    }
+  ]
+}

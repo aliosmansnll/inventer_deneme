@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIXEL - Enerji Yönetim Sistemi</title>
+    
+    <!-- External CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-globe"></i>
+            PIXEL
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-building me-2"></i>Tesisler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#harita-section"><i class="fas fa-map-marked-alt me-2"></i>Harita</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#inventerlar"><i class="fas fa-microchip me-2"></i>İnverterler</a>
+                </li>
+                <!-- Kullanıcı Bilgileri ve Çıkış -->
+                <li class="nav-item dropdown" id="userDropdown" style="display: none;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="" alt="Avatar" class="rounded-circle me-2" width="24" height="24" id="userAvatar">
+                        <span id="userName">Kullanıcı</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu">
+                        <!-- İçerik JavaScript ile doldurulacak -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Content -->
+    <div class="main-wrapper" id="main-dashboard" style="margin-top: 76px;">
+        <div class="container">
+            <!-- Tesis Listesi -->
+            <div class="modern-card mb-4">
+                <div class="card-header-modern">
+                    <i class="fas fa-building me-2"></i>
+                    Tesis Listesi
+                </div>
+                <div class="card-body-modern">
+                    <!-- Loading Indicator -->
+                    <div id="loading-indicator" class="loading">
+                        <i class="fas fa-spinner"></i>
+                        Veriler yükleniyor...
+                    </div>
+
+                    <!-- Desktop Table -->
+                    <div class="table-responsive" id="desktop-table" style="display: none;">
+                        <table class="table table-modern">
+                            <thead>
+                                <tr>
+                                    <th>İsim</th>
+                                    <th>Konum</th>
+                                    <th>Toplam Enerji</th>
+                                    <th>Günlük Enerji</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tesis-table-body">
+                                <!-- Veriler JavaScript ile doldurulacak -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Mobile Cards -->
+                    <div class="mobile-cards" id="mobile-cards" style="display: none;">
+                        <!-- Veriler JavaScript ile doldurulacak -->
+                    </div>
+
+                    <button class="btn-primary-modern mt-3" id="harita-section">
+                        <i class="fas fa-plus me-2"></i>Yeni Tesis Ekle
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tesis Haritası -->
+            <div class="modern-card mb-4">
+                <div class="card-header-modern">
+                    <i class="fas fa-map-marked-alt me-2"></i>
+                    Tesis Haritası
+                </div>
+                <div class="card-body-modern">
+                    <div class="map-container" id="map"></div>
+                </div>
+            </div>
+
+            <!-- İnverterler -->
+            <div class="modern-card mb-4" id="inventerlar">
+                <div class="card-header-modern">
+                    <i class="fas fa-microchip me-2"></i>
+                    İnverterler
+                </div>
+                <div class="card-body-modern">
+                    <!-- Desktop Table -->
+                    <div class="table-responsive">
+                        <table class="table table-modern">
+                            <thead>
+                                <tr>
+                                    <th>Seri No</th>
+                                    <th>Tesis Adı</th>
+                                    <th>Aylık Enerji</th>
+                                    <th>Günlük Enerji</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Veriler JavaScript ile doldurulacak -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Mobile Cards -->
+                    <div class="mobile-cards">
+                        <!-- Veriler JavaScript ile doldurulacak -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Page -->
+    <div class="main-wrapper detail-page" id="detail-page" style="margin-top: 76px;">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="showDashboard()">
+                <i class="fas fa-arrow-left"></i>
+                Ana Sayfaya Dön
+            </a>
+
+            <h1 class="section-title mb-4">
+                <i class="fas fa-chart-line"></i>
+                Tesis Detayları: <span id="detail-facility-name"></span>
+            </h1>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="detail-toplam-enerji">103.649</div>
+                    <div class="stat-label">Toplam Üretim (kW)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">652.649</div>
+                    <div class="stat-label">Yıllık Enerji (kW)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="detail-gunluk-enerji">41.731</div>
+                    <div class="stat-label">Günün Üretimi (kW)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="progress-modern">
+                        <div class="progress-bar-modern" id="detail-durum" style="width: 100%;">
+                            Aktif
+                        </div>
+                    </div>
+                    <div class="stat-label mt-3">Sistem Durumu</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <i class="fas fa-chart-pie"></i>
+                            Toplam Üretim
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="chart1"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <i class="fas fa-chart-line"></i>
+                            Yıllık Enerji
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="chart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <i class="fas fa-chart-area"></i>
+                            Günlük Enerji
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="chart3"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
